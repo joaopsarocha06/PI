@@ -246,10 +246,12 @@ body {
     stroke: #4A0E06;
     stroke-width: 3;
 }
+
 .chef-bear-placeholder {
     width: 500px;
     height: auto;
-    margin-left: 20px;}
+    margin-left: 20px;
+}
 
 /* ==========================================================================
    4. CARDS DE RECEITA
