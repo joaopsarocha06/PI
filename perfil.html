@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumiZoo Clube - Cozinha Criativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Reset de Estilos Básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fredoka One', 'Nunito', sans-serif;
+            background-color: #FCDDC2; /* Cor de fundo do Header */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================================================
+           1. ESTILOS DO HEADER
+           ========================================================================== */
+        .header-container {
+            width: 100%;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FCDDC2; 
+        }
+
+        .btn-back {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-back::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-left: 6px solid #4A0E06;
+            border-bottom: 6px solid #4A0E06;
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .btn-back::after {
+            content: '';
+            width: 30px;
+            height: 6px;
+            background-color: #4A0E06;
+            position: absolute;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .logo-text {
+            font-size: 72px;
+            line-height: 1;
+            background: repeating-linear-gradient(
+                45deg,
+                #FF6B6B,
+                #FF6B6B 2px,
+                #FFAE63 2px,
+                #FFAE63 4px
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 8px 0px #4A0E06) 
+                    drop-shadow(-2px -2px 0px #4A0E06) 
+                    drop-shadow(2px -2px 0px #4A0E06) 
+                    drop-shadow(-2px 2px 0px #4A0E06) 
+                    drop-shadow(2px 2px 0px #4A0E06);
+            letter-spacing: -2px;
+        }
+
+        .logo-text span.zoo {
+            background: repeating-linear-gradient(
+                45deg,
+                #FFAE63,
+                #FFAE63 2px,
+                #FFF099 2px,
+                #FFF099 4px
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtext-clube {
+            position: absolute;
+            top: -5px;
+            right: -25px;
+            font-size: 22px;
+            color: #4A0E06;
+            transform: rotate(10deg);
+        }
+
+        /* ==========================================================================
+           2. ESTILOS DA SEÇÃO PRINCIPAL (100% DA LARGURA)
+           ========================================================================== */
+        .cozinha-section {
+            width: 100%;
+            background-color: #B2826C;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+
+        .cozinha-title {
+            text-align: center;
+            font-size: 46px;
+            color: #FAF2F0;
+            margin-top: 40px;
+            padding: 0 50px;
+            line-height: 1.3;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+            font-weight: normal;
+        }
+
+        .main-characters-container {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .chef-urso, .chef-jacare {
+            height: 380px;
+            object-fit: contain;
+        }
+
+        /* ==========================================================================
+           3. SEÇÃO DE AUTENTICAÇÃO / BOTÕES DA TELA
+           ========================================================================== */
+        .auth-container {
+            width: 100%;
+            max-width: 1100px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            z-index: 3;
+            padding: 0 40px;
+        }
+
+        .auth-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 36px;
+            color: #FAF2F0;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: normal;
+        }
+
+        .auth-buttons-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .btn-auth {
+            font-family: 'Fredoka One', 'Nunito', sans-serif;
+            font-size: 32px;
+            color: #4A0E06;
+            background-color: #FCE6D2;
+            border: 4px solid #4A0E06;
+            border-radius: 16px;
+            padding: 14px 0;
+            width: 320px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            box-shadow: 0px 8px 0px #4A0E06;
+        }
+
+        .btn-auth:active {
+            transform: translateY(4px);
+            box-shadow: 0px 4px 0px #4A0E06;
+        }
+
+        .extra-mascot {
+            position: absolute;
+            bottom: -10px;
+            height: 140px;
+            object-fit: contain;
+            z-index: 2;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .mascot-pizza { left: 20px; animation-delay: 0.3s; }
+        .mascot-sushi { right: 20px; animation-delay: 0.8s; }
+
+        /* ==========================================================================
+           4. MODAIS CONFIGURAÇÕES GERAIS (SOBREPOSIÇÃO)
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .form-card {
+            background-color: #FCDDC2; /* Tom de fundo bege idêntico */
+            width: 90%;
+            max-width: 550px;
+            border: 5px solid #4A0E06;
+            border-radius: 28px;
+            padding: 40px 40px 30px 40px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .form-card {
+            transform: scale(1);
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 38px;
+            color: #4A0E06;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 42px;
+            color: #4A0E06;
+            margin-bottom: 8px;
+            font-weight: normal;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            padding: 14px 20px;
+            border: 3px solid #4A0E06;
+            border-radius: 14px;
+            background-color: #FAF6F0;
+            color: #4A0E06;
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group input::placeholder {
+            color: #C0B2A6;
+        }
+
+        .btn-submit-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .btn-submit {
+            font-family: 'Fredoka One', sans-serif;
+            font-size: 28px;
+            color: #4A0E06;
+            background-color: #D6A38C; /* Tom marrom claro */
+            border: 4px solid #4A0E06;
+            border-radius: 16px;
+            padding: 12px 0;
+            width: 75%;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0px 6px 0px #4A0E06;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .btn-submit:active {
+            transform: translateY(3px);
+            box-shadow: 0px 3px 0px #4A0E06;
+        }
+
+        /* ==========================================================================
+           5. ELEMENTOS EXCLUSIVOS DO FORMULÁRIO DE LOGIN (NOVA IMAGEM)
+           ========================================================================== */
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -10px;
+            margin-bottom: 30px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            color: #4A0E06;
+            font-weight: 700;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* Customização fiel do Checkbox quadrado marrom */
+        .remember-me input {
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 3px solid #4A0E06;
+            border-radius: 4px;
+            background-color: #FAF6F0;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .remember-me input:checked::before {
+            content: '✓';
+            position: absolute;
+            top: -4px;
+            left: 2px;
+            font-size: 18px;
+            color: #4A0E06;
+            font-weight: 900;
+        }
+
+        .forgot-password {
+            color: #4A0E06;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        /* Divisor "Entrar com" */
+        .divider-container {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 25px;
+        }
+
+        .divider-container::before,
+        .divider-container::after {
+            content: '';
+            flex: 1;
+            border-bottom: 2px solid #D6A38C;
+        }
+
+        .divider-text {
+            font-family: 'Nunito', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #4A0E06;
+            padding: 0 15px;
+        }
+
+        /* Seção de Redes Sociais base */
+        .social-login-box {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 10px;
+        }
+
+        .social-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #4A0E06;
+            gap: 8px;
+        }
+
+        /* Mock dos ícones em SVG puros para fidelidade sem imagens externas */
+        .icon-svg {
+            width: 45px;
+            height: 45px;
+            fill: #4A0E06;
+            transition: transform 0.2s;
+        }
+
+        .social-button:hover .icon-svg {
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           ELEMENTOS FLUTUANTES LATERAIS DA COZINHA
+           ========================================================================== */
+        .food-item {
+            position: absolute;
+            object-fit: contain;
+            z-index: 1;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .food-1 { top: 40px; left: 40px; height: 110px; animation-delay: 0s; }
+        .food-2 { top: 220px; left: 100px; height: 85px; animation-delay: 0.5s; }
+        .food-3 { top: 380px; left: 30px; height: 120px; animation-delay: 1s; }
+        .food-4 { top: 560px; left: 60px; height: 110px; animation-delay: 1.5s; }
+        
+        .food-5 { top: 20px; right: 40px; height: 100px; animation-delay: 0.2s; }
+        .food-6 { top: 210px; right: 80px; height: 115px; animation-delay: 0.7s; }
+        .food-7 { top: 430px; right: 40px; height: 135px; animation-delay: 1.2s; }
+        .food-8 { top: 580px; right: 70px; height: 120px; animation-delay: 1.7s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .cozinha-title { font-size: 28px; }
+            .auth-text { font-size: 22px; padding: 0 20px; }
+            .auth-buttons-wrapper { flex-direction: column; align-items: center; gap: 25px; }
+            .btn-auth { width: 85%; font-size: 24px; }
+            .chef-urso, .chef-jacare { height: 240px; }
+            .extra-mascot { display: none; }
+            .form-card { padding: 30px 20px 20px 20px; }
+            .form-group label { font-size: 32px; }
+            .social-login-box { gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-container">
+        <a href="index.html" class="btn-back" aria-label="Voltar"></a>
+        <div class="logo-wrapper">
+            <h1 class="logo-text">Yumi<span class="zoo">Zoo</span></h1>
+            <span class="subtext-clube">Clube</span>
+        </div>
+    </header>
+
+    <main class="cozinha-section">
+        <h2 class="cozinha-title">Junte-se a nossa cozinha criativa!</h2>
+
+        <img src="ovelha.lamen.png" alt="Carneiro Lamen" class="food-item food-1">
+        <img src="porco.rosquinha.png" alt="Porquinho Donut" class="food-item food-2">
+        <img src="urso.panqueca.png" alt="Urso Panqueca" class="food-item food-3">
+        <img src="pinguim.cake.png" alt="Pinguim Cupcake" class="food-item food-4">
+
+        <div class="main-characters-container">
+            <img src="amigos.png" alt="Urso Chef" class="chef-urso">
+
+        </div>
+
+        <img src="pinto.png" alt="Pintinho Hotdog" class="food-item food-5">
+        <img src="rapo.burguer.png" alt="Raposa Hambúrguer" class="food-item food-6">
+        <img src="panda.suco.png" alt="Panda Bubble Tea" class="food-item food-7">
+        <img src="coelho.sorvete.png" alt="Coelho Sorvete" class="food-item food-8">
+
+        <section class="auth-container">
+            <img src="dino.pizza.png" alt="Dinossauro Pizza" class="extra-mascot mascot-pizza">
+            <p class="auth-text">Para salvar suas receitas favoritas e compartilhar as suas</p>
+            
+            <div class="auth-buttons-wrapper">
+                <button class="btn-auth" id="btn-cadastrar">Cadastrar</button>
+                <button class="btn-auth" id="btn-entrar">Entrar</button>
+            </div>
+
+            <img src="gato.sushi.png" alt="Gatinho Sushi" class="extra-mascot mascot-sushi">
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="modal-cadastro">
+        <div class="form-card">
+            <span class="btn-close" id="close-cadastro">x</span>
+            <form onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="reg-nome">Nome</label>
+                    <input type="text" id="reg-nome" placeholder="Digite seu nome e sobrenome" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email</label>
+                    <input type="email" id="reg-email" placeholder="digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-senha">Senha</label>
+                    <input type="password" id="reg-senha" placeholder="crie uma senha (mínimo 10 caracteres)" minlength="10" required>
+                </div>
+                <div class="btn-submit-container">
+                    <button type="submit" class="btn-submit">Criar Conta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-login">
+        <div class="form-card">
+            <span class="btn-close" id="close-login">x</span>
+            <form onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <label for="log-email">Email</label>
+                    <input type="email" id="log-email" placeholder="digite seu email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="log-senha">Senha</label>
+                    <input type="password" id="log-senha" placeholder="digite sua senha" required>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <span class="forgot-password">Esqueceu a senha?</span>
+                </div>
+
+                <div class="btn-submit-container">
+                    <button type="submit" class="btn-submit">Entrar</button>
+                </div>
+
+                <div class="divider-container">
+                    <span class="divider-text">Entrar com</span>
+                </div>
+
+                <div class="social-login-box">
+                    <button type="button" class="social-button" aria-label="Entrar com Google">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <path d="M12.24 10.285V13.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.866-3.577-7.866-8s3.536-8 7.866-8c2.46 0 4.105 1.025 5.047 1.926l2.427-2.334C17.955 2.192 15.34 1 12.24 1 6.033 1 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 10.793-4.537 10.793-10.986 0-.743-.08-1.313-.177-1.714H12.24z"/>
+                        </svg>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-button" aria-label="Entrar com Instagram">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                        <span>Instagram</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Seletores de Elementos
+        const btnCadastrar = document.getElementById('btn-cadastrar');
+        const btnEntrar = document.getElementById('btn-entrar');
+        
+        const modalCadastro = document.getElementById('modal-cadastro');
+        const modalLogin = document.getElementById('modal-login');
+        
+        const closeCadastro = document.getElementById('close-cadastro');
+        const closeLogin = document.getElementById('close-login');
+
+        // Funções para gerenciar o Modal de Cadastro
+        btnCadastrar.addEventListener('click', () => {
+            modalLogin.classList.remove('active'); // Evita sobreposição de modais
+            modalCadastro.classList.add('active');
+        });
+        closeCadastro.addEventListener('click', () => {
+            modalCadastro.classList.remove('active');
+        });
+
+        // Funções para gerenciar o Modal de Login
+        btnEntrar.addEventListener('click', () => {
+            modalCadastro.classList.remove('active'); // Evita sobreposição de modais
+            modalLogin.classList.add('active');
+        });
+        closeLogin.addEventListener('click', () => {
+            modalLogin.classList.remove('active');
+        });
+
+        // Fechar qualquer modal ao clicar fora da área do card (no overlay escuro)
+        window.addEventListener('click', (e) => {
+            if (e.target === modalCadastro) {
+                modalCadastro.classList.remove('active');
+            }
+            if (e.target === modalLogin) {
+                modalLogin.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

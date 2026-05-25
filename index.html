@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumiZoo Receitas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <span class="logo-text-main"><span style="color: #E26836;">Yumi</span><span style="color: #60301B;">Zoo</span></span>
+            <span class="logo-text-sub">Receitas</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Procure uma receita, um ingrediente...">
+            <button class="search-icon" aria-label="Buscar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60301B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="user-profile">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22.5" cy="22.5" r="21" stroke="#60301B" stroke-width="3" fill="#FFFFFF"/>
+                <circle cx="22.5" cy="16.5" r="6.5" stroke="#60301B" stroke-width="3"/>
+                <path d="M10 35C12.5 29 17 26 22.5 26C28 26 32.5 29 35 35" stroke="#60301B" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="banner-carousel">
+            <div class="banner-text-section">
+                <h1 class="banner-title">Receitas fofinhas para alegrar sua barriguinha!</h1>
+                <a href="#" class="btn-explore">explorar receitas</a>
+            </div>
+
+            <div class="banner-character-section">
+                <span class="heart-icon">❤️</span>
+                <img src="Design sem nome.png" alt="Ursinho Chef YumiZoo" class="chef-bear-placeholder" 
+                >
+                
+            </div>
+
+            <div class="carousel-dots">
+                <span class="dot"></span>
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2 class="categories-title">Categorias</h2>
+            <div class="categories-grid">
+                <div class="category-card"><div class="category-icon-wrapper"><img src= "bolo.png" alt="Bolos"></div><span class="category-name">Bolos e Tortas</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1zYWxhZC1pY29uIGx1Y2lkZS1zYWxhZCI+PHBhdGggZD0iTTcgMjFoMTAiLz48cGF0aCBkPSJNMTIgMjFhOSA5IDAgMCAwIDktOUgzYTkgOSAwIDAgMCA5IDlaIi8+PHBhdGggZD0iTTExLjM4IDEyYTIuNCAyLjQgMCAwIDEtLjQtNC43NyAyLjQgMi40IDAgMCAxIDMuMi0yLjc3IDIuNCAyLjQgMCAwIDEgMy40Ny0uNjMgMi40IDIuNCAwIDAgMSAzLjM3IDMuMzcgMi40IDIuNCAwIDAgMS0xLjEgMy43IDIuNTEgMi41MSAwIDAgMSAuMDMgMS4xIi8+PHBhdGggZD0ibTEzIDEyIDQtNCIvPjxwYXRoIGQ9Ik0xMC45IDcuMjVBMy45OSAzLjk5IDAgMCAwIDQgMTBjMCAuNzMuMiAxLjQxLjU0IDIiLz48L3N2Zz4=" alt="Saladas"></div><span class="category-name">Saladas</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1maXNoLWljb24gbHVjaWRlLWZpc2giPjxwYXRoIGQ9Ik02LjUgMTJjLjk0LTMuNDYgNC45NC02IDguNS02IDMuNTYgMCA2LjA2IDIuNTQgNyA2LS45NCAzLjQ3LTMuNDQgNi03IDZzLTcuNTYtMi41My04LjUtNloiLz48cGF0aCBkPSJNMTggMTJ2LjUiLz48cGF0aCBkPSJNMTYgMTcuOTNhOS43NyA5Ljc3IDAgMCAxIDAtMTEuODYiLz48cGF0aCBkPSJNNyAxMC42N0M3IDggNS41OCA1Ljk3IDIuNzMgNS41Yy0xIDEuNS0xIDUgLjIzIDYuNS0xLjI0IDEuNS0xLjI0IDUtLjIzIDYuNUM1LjU4IDE4LjAzIDcgMTYgNyAxMy4zMyIvPjxwYXRoIGQ9Ik0xMC40NiA3LjI2QzEwLjIgNS44OCA5LjE3IDQuMjQgOCAzaDUuOGEyIDIgMCAwIDEgMS45OCAxLjY3bC4yMyAxLjQiLz48cGF0aCBkPSJtMTYuMDEgMTcuOTMtLjIzIDEuNEEyIDIgMCAwIDEgMTMuOCAyMUg5LjVhNS45NiA1Ljk2IDAgMCAwIDEuNDktMy45OCIvPjwvc3ZnPg=="></div><span class="category-name">Frutos do mar</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1kcnVtc3RpY2staWNvbiBsdWNpZGUtZHJ1bXN0aWNrIj48cGF0aCBkPSJNMTUuNCAxNS42M2E3Ljg3NSA2IDEzNSAxIDEgNi4yMy02LjIzIDQuNSAzLjQzIDEzNSAwIDAtNi4yMyA2LjIzIi8+PHBhdGggZD0ibTguMjkgMTIuNzEtMi42IDIuNmEyLjUgMi41IDAgMSAwLTEuNjUgNC42NUEyLjUgMi41IDAgMSAwIDguNyAxOC4zbDIuNTktMi41OSIvPjwvc3ZnPg==" alt="Aves"></div><span class="category-name">Aves</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iZWVmLWljb24gbHVjaWRlLWJlZWYiPjxwYXRoIGQ9Ik0xNi40IDEzLjdBNi41IDYuNSAwIDEgMCA2LjI4IDYuNmMtMS4xIDMuMTMtLjc4IDMuOS0zLjE4IDYuMDhBMyAzIDAgMCAwIDUgMThjNCAwIDguNC0xLjggMTEuNC00LjMiLz48cGF0aCBkPSJtMTguNSA2IDIuMTkgNC41YTYuNDggNi40OCAwIDAgMS0yLjI5IDcuMkMxNS40IDIwLjIgMTEgMjIgNyAyMmEzIDMgMCAwIDEtMi42OC0xLjY2TDIuNCAxNi41Ii8+PGNpcmNsZSBjeD0iMTIuNSIgY3k9IjguNSIgcj0iMi41Ii8+PC9zdmc+" alt="Carnes"></div><span class="category-name">Carnes</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jcm9pc3NhbnQtaWNvbiBsdWNpZGUtY3JvaXNzYW50Ij48cGF0aCBkPSJNMTAuMiAxOEg0Ljc3NGExLjUgMS41IDAgMCAxLTEuMzUyLS45NyAxMSAxMSAwIDAgMSAuMTMyLTYuNDg3Ii8+PHBhdGggZD0iTTE4IDEwLjJWNC43NzRhMS41IDEuNSAwIDAgMC0uOTctMS4zNTIgMTEgMTEgMCAwIDAtNi40ODYuMTMyIi8+PHBhdGggZD0iTTE4IDVhNCAzIDAgMCAxIDQgMyAyIDIgMCAwIDEtMiAyIDEwIDEwIDAgMCAwLTUuMTM5IDEuNDIiLz48cGF0aCBkPSJNNSAxOGEzIDQgMCAwIDAgMyA0IDIgMiAwIDAgMCAyLTIgMTAgMTAgMCAwIDEgMS40Mi01LjE0Ii8+PHBhdGggZD0iTTguNzA5IDIuNTU0YTEwIDEwIDAgMCAwLTYuMTU1IDYuMTU1IDEuNSAxLjUgMCAwIDAgLjY3NiAxLjYyNmw5LjgwNyA1LjQyYTIgMiAwIDAgMCAyLjcxOC0yLjcxOGwtNS40Mi05LjgwN2ExLjUgMS41IDAgMCAwLTEuNjI2LS42NzYiLz48L3N2Zz4=" alt="Panificação"></div><span class="category-name">Panificação</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iYWRnZS1qYXBhbmVzZS15ZW4taWNvbiBsdWNpZGUtYmFkZ2UtamFwYW5lc2UteWVuIj48cGF0aCBkPSJNMy44NSA4LjYyYTQgNCAwIDAgMSA0Ljc4LTQuNzcgNCA0IDAgMCAxIDYuNzQgMCA0IDQgMCAwIDEgNC43OCA0Ljc4IDQgNCAwIDAgMSAwIDYuNzQgNCA0IDAgMCAxLTQuNzcgNC43OCA0IDQgMCAwIDEtNi43NSAwIDQgNCAwIDAgMS00Ljc4LTQuNzcgNCA0IDAgMCAxIDAtNi43NloiLz48cGF0aCBkPSJtOSA4IDMgM3Y3Ii8+PHBhdGggZD0ibTEyIDExIDMtMyIvPjxwYXRoIGQ9Ik05IDEyaDYiLz48cGF0aCBkPSJNOSAxNmg2Ii8+PC9zdmc+" alt="Oriental"></div><span class="category-name">Oriental</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1lZ2ctZnJpZWQtaWNvbiBsdWNpZGUtZWdnLWZyaWVkIj48Y2lyY2xlIGN4PSIxMS41IiBjeT0iMTIuNSIgcj0iMy41Ii8+PHBhdGggZD0iTTMgOGMwLTMuNSAyLjUtNiA2LjUtNiA1IDAgNC44MyAzIDcuNSA1czUgMiA1IDZjMCA0LjUtMi41IDYuNS03IDYuNS0yLjUgMC0yLjUgMi41LTYgMi41cy03LTItNy01LjVjMC0zIDEuNS0zIDEuNS01QzMuNSAxMCAzIDkgMyA4WiIvPjwvc3ZnPg==" alt="Café"></div><span class="category-name">Café da manhã</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1waXp6YS1pY29uIGx1Y2lkZS1waXp6YSI+PHBhdGggZD0ibTEyIDE0LTEgMSIvPjxwYXRoIGQ9Im0xMy43NSAxOC4yNS0xLjI1IDEuNDIiLz48cGF0aCBkPSJNMTcuNzc1IDUuNjU0YTE1LjY4IDE1LjY4IDAgMCAwLTEyLjEyMSAxMi4xMiIvPjxwYXRoIGQ9Ik0xOC44IDkuM2ExIDEgMCAwIDAgMi4xIDcuNyIvPjxwYXRoIGQ9Ik0yMS45NjQgMjAuNzMyYTEgMSAwIDAgMS0xLjIzMiAxLjIzMmwtMTgtNWExIDEgMCAwIDEtLjY5NS0xLjIzMkExOS42OCAxOS42OCAwIDAgMSAxNS43MzIgMi4wMzdhMSAxIDAgMCAxIDEuMjMyLjY5NXoiLz48L3N2Zz4=" alt="Massas"></div><span class="category-name">Massas</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXJ0aW5pLWljb24gbHVjaWRlLW1hcnRpbmkiPjxwYXRoIGQ9Ik0xMiAxMiA0LjIwNyA0LjIwN0EuNzA3LjcwNyAwIDAgMSA0LjcwNyAzaDE0LjU4NmEuNzA3LjcwNyAwIDAgMSAuNSAxLjIwN3oiLz48cGF0aCBkPSJNMTIgMTJ2MTAiLz48cGF0aCBkPSJNNyAyMmgxMCIvPjwvc3ZnPg==" alt="Bebidas"></div><span class="category-name">Bebidas</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jb29raWUtaWNvbiBsdWNpZGUtY29va2llIj48cGF0aCBkPSJNMTIgMmExMCAxMCAwIDEgMCAxMCAxMCA0IDQgMCAwIDEtNS01IDQgNCAwIDAgMS01LTUiLz48cGF0aCBkPSJNOC41IDguNXYuMDEiLz48cGF0aCBkPSJNMTYgMTUuNXYuMDEiLz48cGF0aCBkPSJNMTIgMTJ2LjAxIi8+PHBhdGggZD0iTTExIDE3di4wMSIvPjxwYXRoIGQ9Ik03IDE0di4wMSIvPjwvc3ZnPg==" alt="Biscoitos"></div><span class="category-name">Biscoitos</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1iYXJyZWwtaWNvbiBsdWNpZGUtYmFycmVsIj48cGF0aCBkPSJNMTAgM2E0MSA0MSAwIDAgMCAwIDE4Ii8+PHBhdGggZD0iTTE0IDNhNDEgNDEgMCAwIDEgMCAxOCIvPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAxLjY4LjkyIDE1LjI1IDE1LjI1IDAgMCAxIDAgMTYuMTZBMiAyIDAgMCAxIDE3IDIxSDdhMiAyIDAgMCAxLTEuNjgtLjkyIDE1LjI1IDE1LjI1IDAgMCAxIDAtMTYuMTZBMiAyIDAgMCAxIDcgM3oiLz48cGF0aCBkPSJNMy44NCAxN2gxNi4zMiIvPjxwYXRoIGQ9Ik0zLjg0IDdoMTYuMzIiLz48L3N2Zz4=" alt="Molhos"></div><span class="category-name">Molhos</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1jb2ZmZWUtaWNvbiBsdWNpZGUtY29mZmVlIj48cGF0aCBkPSJNMTAgMnYyIi8+PHBhdGggZD0iTTE0IDJ2MiIvPjxwYXRoIGQ9Ik0xNiA4YTEgMSAwIDAgMSAxIDF2OGE0IDQgMCAwIDEtNCA0SDdhNCA0IDAgMCAxLTQtNFY5YTEgMSAwIDAgMSAxLTFoMTRhNCA0IDAgMSAxIDAgOGgtMSIvPjxwYXRoIGQ9Ik02IDJ2MiIvPjwvc3ZnPg==" alt="Cafés"></div><span class="category-name">Cafés</span></div>
+                <div class="category-card"><div class="category-icon-wrapper"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM0QTBFMDYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1pY2UtY3JlYW0tYm93bC1pY29uIGx1Y2lkZS1pY2UtY3JlYW0tYm93bCI+PHBhdGggZD0iTTEyIDE3YzUgMCA4LTIuNjkgOC02SDRjMCAzLjMxIDMgNiA4IDZtLTQgNGg4bS00LTN2M001LjE0IDExYTMuNSAzLjUgMCAxIDEgNi43MSAwIi8+PHBhdGggZD0iTTEyLjE0IDExYTMuNSAzLjUgMCAxIDEgNi43MSAwIi8+PHBhdGggZD0iTTE1LjUgNi41YTMuNSAzLjUgMCAxIDAtNyAwIi8+PC9zdmc+" alt="Sorvetes"></div><span class="category-name">Sorvetes</span></div>
+            </div>
+        </section>
+
+        <section class="trending-section">
+            <h2 class="trending-title">Em alta</h2>
+            <div class="recipes-grid">
+                <div class="recipe-card">
+                    <div class="recipe-image-wrapper">
+                        <img src="https://guiadacozinha.com.br/wp-content/uploads/2018/04/torta-de-limao-facil.jpg" alt="Torta de limão" class="recipe-img">
+                        <button class="favorite-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E26836" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="recipe-info-content">
+                        <h3 class="recipe-title">Torta de limao</h3>
+                        <div class="recipe-meta-row">
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>40 min</span>
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>4,8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image-wrapper">
+                        <img src="https://sifu.unileversolutions.com/image/en-CA/recipe-topvisual/2/1260-709/filet-mignon-with-garlic-rosemary-sauce-50203005.jpg" alt="File Migon" class="recipe-img">
+                        <button class="favorite-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E26836" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="recipe-info-content">
+                        <h3 class="recipe-title">File Migon</h3>
+                        <div class="recipe-meta-row">
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>45 min</span>
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>4,5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image-wrapper">
+                        <img src="https://assets.rebelmouse.io/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMjc3MDAwMS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY3NTA1OTY3Nn0.oFW8ynZfbitO_d68zxq7m4xJ-jlhB607XMfWtmyosWs/img.jpg?width=1200&height=600&coordinates=0%2C1728%2C0%2C1728" alt="Cupcake" class="recipe-img">
+                        <button class="favorite-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E26836" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="recipe-info-content">
+                        <h3 class="recipe-title">Cupcake de Morango</h3>
+                        <div class="recipe-meta-row">
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>36 min</span>
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>5,0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-card">
+                    <div class="recipe-image-wrapper">
+                        <img src="https://essareceitafunciona.com.br/wp-content/uploads/2022/09/Panqueca-doce-Essa-Receita-Funciona-4.jpg" alt="Panqueca" class="recipe-img">
+                        <button class="favorite-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E26836" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
+                    </div>
+                    <div class="recipe-info-content">
+                        <h3 class="recipe-title">Panqueca de Farinha</h3>
+                        <div class="recipe-meta-row">
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>15 min</span>
+                            <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>4,7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mascots-section">
+            <div class="mascots-container">
+                <h2 class="mascots-title">Receita dos mascotes</h2>
+                <div class="mascots-grid">
+                    <div class="mascot-card fox">
+                        <div class="mascot-img-wrapper">
+                            <img src="raposa.png" alt="Raposa dos salgados" class="mascot-img">
+                        </div>
+                        <h3 class="mascot-name">Raposa dos salgados</h3>
+                        <a href="#" class="mascot-btn">Ver receitas &rarr;</a>
+                    </div>
+
+                    <div class="mascot-card otter">
+                        <div class="mascot-img-wrapper">
+                            <img src="lontra.png" alt="Lontra das bebidas" class="mascot-img">
+                        </div>
+                        <h3 class="mascot-name">Lontra das bebidas</h3>
+                        <a href="#" class="mascot-btn">Ver receitas &rarr;</a>
+                    </div>
+
+                    <div class="mascot-card bunny">
+                        <div class="mascot-img-wrapper">
+                            <img src="coelho.png" alt="Coelha dos doces" class="mascot-img">
+                        </div>
+                        <h3 class="mascot-name">Coelha dos doces</h3>
+                        <a href="#" class="mascot-btn">Ver receitas &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <a href="#" class="footer-link">Sobre Nós</a>
+        <a href="#" class="footer-link">Contato</a>
+        <a href="#" class="footer-link">Instagram</a>
+    </footer>
+
+</body>
+</html>

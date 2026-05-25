@@ -1,0 +1,385 @@
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka One', 'Nunito', sans-serif;
+    background-color: #B2826C; /* Tom marrom de fundo padrão */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   1. HEADER YUMIZOO RECEITAS
+   ========================================================================== */
+.header-receitas {
+    width: 100%;
+    background-color: #FCDDC2; /* Fundo creme */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #4A0E06; /* Borda robusta */
+    border-bottom-left-radius: 24px;   
+    border-bottom-right-radius: 24px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.logo-text {
+    font-size: 64px;
+    line-height: 0.9;
+    background: repeating-linear-gradient(
+        45deg,
+        #FF6B6B,
+        #FF6B6B 2px,
+        #FFAE63 2px,
+        #FFAE63 4px
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 7px 0px #4A0E06) 
+            drop-shadow(-2px -2px 0px #4A0E06) 
+            drop-shadow(2px -2px 0px #4A0E06) 
+            drop-shadow(-2px 2px 0px #4A0E06) 
+            drop-shadow(2px 2px 0px #4A0E06);
+    letter-spacing: -2px;
+}
+
+.logo-text span.zoo {
+    background: repeating-linear-gradient(
+        45deg,
+        #FFAE63,
+        #FFAE63 2px,
+        #FFF099 2px,
+        #FFF099 4px
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtext-receitas {
+    font-size: 38px;
+    color: #4A0E06;
+    margin-bottom: 2px;
+    letter-spacing: -0.5px;
+}
+
+.profile-button {
+    background-color: #FAF6F0;
+    border: 4px solid #4A0E06;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 6px 0px #4A0E06;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.profile-button:active {
+    transform: translateY(3px);
+    box-shadow: 0px 3px 0px #4A0E06;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #4A0E06;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+/* ==========================================================================
+   2. APARTADO DO CORPO E BARRA LATERAL
+   ========================================================================== */
+.app-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    position: relative;
+}
+
+.sidebar-filters {
+    width: 260px;
+    background-color: #D6A38C; /* Tom marrom claro */
+    border-right: 4px solid #FAF2F0; /* Divisória vertical branca */
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FAF2F0;
+    font-size: 22px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #FAF2F0;
+}
+
+.icon-cake {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: #FAF2F0;
+    stroke-width: 2.5;
+}
+
+.filter-group-title {
+    color: #FAF2F0;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #FAF2F0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filter-label input {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #FAF2F0;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.filter-label input:checked {
+    background-color: #FAF2F0;
+}
+
+.filter-label input:checked::before {
+    content: '✓';
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    font-size: 16px;
+    color: #D6A38C;
+    font-weight: 900;
+}
+
+/* ==========================================================================
+   3. ÁREA DE CONTEÚDO E BUSCA
+   ========================================================================== */
+.content-area {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.search-wrapper {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    padding: 12px 50px 12px 20px;
+    border: 3px solid #4A0E06;
+    border-radius: 14px;
+    background-color: #FAF6F0;
+    color: #4A0E06;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #C0B2A6;
+}
+
+.search-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.icon-search {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: #4A0E06;
+    stroke-width: 3;
+}
+.chef-bear-placeholder {
+    width: 500px;
+    height: auto;
+    margin-left: 20px;}
+
+/* ==========================================================================
+   4. CARDS DE RECEITA
+   ========================================================================== */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.recipe-card {
+    background-color: #4A0E06; /* Cartão marrom escuro */
+    border: 3px solid #4A0E06;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.icon-heart {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: #FFAE63;
+    stroke-width: 3;
+    transition: fill 0.2s;
+}
+
+.favorite-btn:hover .icon-heart {
+    fill: #FFAE63;
+}
+
+.recipe-image-box {
+    width: 100%;
+    height: 200px;
+    background-color: #FAF6F0;
+    overflow: hidden;
+}
+
+.recipe-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recipe-card-body {
+    padding: 20px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 15px;
+}
+
+.recipe-title {
+    color: #FAF2F0;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: normal;
+    text-align: center;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FAF2F0;
+    padding: 0 5px;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.icon-meta {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #FAF2F0;
+    stroke-width: 2.5;
+}
+
+.icon-star {
+    fill: none;
+    stroke: #FAF2F0;
+    stroke-width: 2.5;
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar-filters {
+        width: 100%;
+        border-right: none;
+        border-bottom: 4px solid #FAF2F0;
+    }
+    .content-area {
+        padding: 20px;
+    }
+}
